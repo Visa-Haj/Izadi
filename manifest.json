@@ -1,0 +1,20 @@
+{
+  "name": "کارتابل زائران - کاروان 26035",
+  "short_name": "کارتابل زائران",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0b5d3b",
+  "theme_color": "#0b5d3b",
+  "icons": [
+    {
+      "src": "https://lh3.googleusercontent.com/d/1rQTbFFYrygBq0t_kCjI91HrIPDDes515=s192",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://lh3.googleusercontent.com/d/1rQTbFFYrygBq0t_kCjI91HrIPDDes515=s512",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
