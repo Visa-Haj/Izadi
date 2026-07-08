@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>کارتابل زائران | کاروان 26035</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Tahoma, sans-serif;
+    background: #0b5d3b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .box {
+    text-align: center;
+    color: #fff;
+    padding: 24px;
+    max-width: 340px;
+  }
+  .title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 18px;
+  }
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    background: #fff;
+    color: #0b5d3b;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 10px;
+  }
+  .hint {
+    font-size: 13px;
+    margin-top: 16px;
+    opacity: .85;
+    line-height: 1.9;
+  }
+</style>
+</head>
+<body>
+<div class="box">
+  <div class="title">در حال انتقال به کارتابل زائران...</div>
+  <a class="btn" id="manualBtn" href="#">باز کردن در Chrome</a>
+  <div class="hint">
+    اگر صفحه به‌طور خودکار باز نشد، روی دکمه‌ی بالا بزنید.<br>
+    بعد از باز شدن، از منوی کروم (⋮) گزینه‌ی
+    «Add to Home screen» را بزنید تا میانبر روی صفحه‌ی گوشی‌تان ساخته شود.
+  </div>
+</div>
+
+<script>
+  // ⚠️ این آدرس رو با آدرس نهایی GitHub Pages خودت جایگزین کن (بدون https://)
+  var TARGET_HOST = 'visa-haj.github.io';
+  var TARGET_PATH = '/Izadi/';
+  var TARGET_URL  = 'https://' + TARGET_HOST + TARGET_PATH;
+
+  document.getElementById('manualBtn').href = TARGET_URL;
+
+  // تلاش برای بازکردن مستقیم در کروم روی اندروید با استفاده از Intent
+  var ua = navigator.userAgent || '';
+  var isAndroid = /Android/i.test(ua);
+
+  if (isAndroid) {
+    var intentUrl = 'intent://' + TARGET_HOST + TARGET_PATH +
+      '#Intent;scheme=https;package=com.android.chrome;end';
+    window.location.href = intentUrl;
+
+    // اگر Intent کار نکرد (مثلاً کروم پیش‌فرض نبود)، بعد از یک ثانیه به لینک عادی برو
+    setTimeout(function () {
+      window.location.href = TARGET_URL;
+    }, 1200);
+  } else {
+    // برای iOS و بقیه دستگاه‌ها مستقیم به آدرس اصلی برو
+    window.location.href = TARGET_URL;
+  }
+</script>
+</body>
+</html>
